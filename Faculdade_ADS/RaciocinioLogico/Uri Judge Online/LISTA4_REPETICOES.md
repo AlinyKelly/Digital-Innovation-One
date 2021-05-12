@@ -8,7 +8,6 @@
 
 **Professor** - Átila Brandão
 
-1074, 1075, 1078, 1079, 1113, 1114, 1115, 1116, 1117, 1118, 1133, 1142
 ------------------------------------------------------------------------------------------
 
 [Problema 1059 - Números Pares](https://www.urionlinejudge.com.br/judge/pt/problems/view/1059)
