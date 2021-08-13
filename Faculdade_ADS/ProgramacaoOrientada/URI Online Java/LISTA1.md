@@ -327,7 +327,60 @@ public class Main {
 **_Resolução_**
 
 ```
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
+/**
+ * @author Brian Yeicol Restrepo Tangarife 
+ */
+
+public class Main {
+    static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    static PrintWriter out = new PrintWriter(System.out);
+ 
+    public static void main(String[] args) throws IOException {
+        int x = readInt();
+        String[] cases;
+        String number, base;
+        int decimal;
+        int caseNumber = 0;
+        while (caseNumber++ < x) {
+            cases = read().split("\\s");
+            number = cases[0];
+            base = cases[1];
+            out.println("Case " + caseNumber + ":");
+            switch (base) {
+                case "bin":
+                    decimal = Integer.parseInt(number, 2);
+                    out.println(decimal + " dec");
+                    out.println(Integer.toString(decimal, 16) + " hex\n");
+                    break;
+                case "dec":
+                    decimal = Integer.parseInt(number);
+                    out.println(Integer.toString(decimal, 16) + " hex");
+                    out.println(Integer.toString(decimal, 2) + " bin\n");
+                    break;
+                case "hex":
+                    decimal = Integer.parseInt(number, 16);
+                    out.println(decimal + " dec");
+                    out.println(Integer.toString(decimal, 2) + " bin\n");
+                    break;
+            }
+        }
+        out.close();
+    }
+
+    private static String read() throws IOException {
+        return in.readLine();
+    }
+
+    private static int readInt() throws IOException {
+        return Integer.parseInt(in.readLine());
+    }
+ 
+}
 ```
 
 [Problema 2760 - Entrada e Saída de String](https://www.urionlinejudge.com.br/judge/pt/problems/view/2760)
@@ -335,7 +388,60 @@ public class Main {
 **_Resolução_**
 
 ```
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.Locale;
 
+/**
+ * @author Rodrigo CavanhaMan 
+ */
+
+public class Main {
+	public static void main(String[] args) {
+		Locale.setDefault(new Locale("en", "US"));
+		Scanner sc = new Scanner(System.in);
+
+		String[] a = new String[40];
+		String input = sc.nextLine();
+		a = input.split("");
+		int ta=a.length;
+		
+		String[] b = new String[40];
+		input = sc.nextLine();
+		b = input.split("");
+		int tb=b.length;
+		
+		String[] c = new String[40];
+		input = sc.nextLine();
+		c = input.split("");
+		int tc=c.length;
+		
+		for(int i=0 ; i<ta ; i++) System.out.printf("%s",a[i]);
+		for(int i=0 ; i<tb; i++) System.out.printf("%s",b[i]);
+		for(int i=0 ; i<tc; i++) System.out.printf("%s",c[i]);
+		System.out.println();
+		
+		for(int i=0 ; i<tb ; i++) System.out.printf("%s",b[i]);
+		for(int i=0 ; i<tc; i++) System.out.printf("%s",c[i]);
+		for(int i=0 ; i<ta; i++) System.out.printf("%s",a[i]);
+		System.out.println();
+		
+		for(int i=0 ; i<tc; i++) System.out.printf("%s",c[i]);
+		for(int i=0 ; i<ta; i++) System.out.printf("%s",a[i]);
+		for(int i=0 ; i<tb; i++) System.out.printf("%s",b[i]);
+		System.out.println();
+		
+		if(ta>10)ta=10;
+		if(tb>10)tb=10;
+		if(tc>10)tc=10;
+		for(int i=0 ; i<ta; i++) System.out.printf("%s",a[i]);
+		for(int i=0 ; i<tb; i++) System.out.printf("%s",b[i]);
+		for(int i=0 ; i<tc; i++) System.out.printf("%s",c[i]);
+		System.out.println();
+		
+		sc.close();
+	}
+}
 ```
 
 [Problema 2837 - Sequência](https://www.urionlinejudge.com.br/judge/pt/problems/view/2837)
